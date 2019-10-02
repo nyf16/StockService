@@ -4,12 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29201.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{892CEA09-481A-48CE-96F9-1565EB71B77F}"
-	ProjectSection(SolutionItems) = preProject
-		src\StockService\.git = src\StockService\.git
-		src\StockService\.gitignore = src\StockService\.gitignore
-		src\StockService\.vs = src\StockService\.vs
-		src\StockService\README.md = src\StockService\README.md
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockService.Web", "src\StockService.Web\StockService.Web.csproj", "{B0C9F480-9C8A-4BB4-9397-6E6E3A6872E6}"
 EndProject
