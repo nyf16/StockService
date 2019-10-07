@@ -25,11 +25,11 @@ namespace StockService.Web.ViewModels.Identity
         public string ConfirmPassword { get; set; }
         [Required]
         [Display(Name = "Ad")]
-        [StringLength(30,ErrorMessage ="{0} alanı en fazla {1}, en az {2} karakter olmalıdır.",MinimumLength =5)]
+        [StringLength(30,ErrorMessage ="{0} alanı en fazla {1}, en az {2} karakter olmalıdır.",MinimumLength =3)]
         public string FirstName { get; set; }
         [Required]
         [Display(Name = "Soyad")]
-        [StringLength(30,ErrorMessage ="{0} alanı en fazla {1}, en az {2} karakter olmalıdır.",MinimumLength =5)]
+        [StringLength(30,ErrorMessage ="{0} alanı en fazla {1}, en az {2} karakter olmalıdır.",MinimumLength =3)]
         public string LastName { get; set; }
         [Required]
         [Display(Name ="Sicil Numarası")]
