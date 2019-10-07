@@ -46,9 +46,27 @@ namespace StockService.Web.Controllers
             {
                 // validse kaydet
 
-                // kaydetme basarisizsa
-                // hatalari modelstat e ekle
-                // AddErrors()
+                // ApplicationUser olustur
+                var newUser = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    // FirstName = model.FirstName,
+                    // LastName = model.LastName,
+                    EmailConfirmed = true,
+                    TwoFactorEnabled = false,
+                    RegisterNumber = model.RegisterNumber
+                };
+
+                var registerUser = await _usermanager.CreateAsync(newUser, model.Password);
+                if (registerUser.Succeeded)
+                {
+                    await _signInManager.SignInAsync(newUser, isPersistent: false);
+                    return RedirectToAction("Index", "Home");
+                }
+                // kaydetme basarisizsa hatalari modelstate ekle
+                AddErrors(registerUser);
+                
             
             }
             // degilse hatalari don

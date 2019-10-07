@@ -34,7 +34,7 @@ namespace StockService.Web.ViewModels.Identity
         [Required]
         [Display(Name ="Sicil Numarası")]
         [StringLength(4,ErrorMessage ="{0} alanı en fazla {1}, en az {2} karakter olmalıdır!",MinimumLength =3)]
-        public string RegisterNumber { get; set; }
+        public int RegisterNumber { get; set; }
 
     }
 }
