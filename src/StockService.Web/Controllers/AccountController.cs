@@ -29,9 +29,34 @@ namespace StockService.Web.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Login(LoginViewModel model)
+        public async Task<IActionResult> Login(LoginViewModel model)
         {
-            return View();
+            // gelen modeli dogrula
+            if (ModelState.IsValid)
+            {
+                // model dogruysa
+                // kullaniciyi kontrol et var mi?
+                var existUser = await _usermanager.FindByEmailAsync(model.UserName);
+                // yoksa hata dön
+                if (existUser == null)
+                {
+                    ModelState.AddModelError(string.Empty, "Bu e-mail ile kayıtlı bir kullanıcı bulunamadı!");
+                    return View(model);
+                }
+                // kullanıcı adı ve sifre eslesiyor mu?
+                var login = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, false);
+                // eslesmiyorsa hat don
+                if(!login.Succeeded)
+                {
+                    ModelState.AddModelError(string.Empty, " Bu e-mail ve şifre ile uyumlu bir kullanıcı bulunamadı! Şifrenizi kontrol edin!");
+                    return View(model);
+                }
+
+                // ana sayfaya yonlendır(simdilik)
+                return RedirectToAction("Index", "Home");
+            }
+            // basarili degilse hata don
+            return View(model);
         }
         public IActionResult Register()
         {

@@ -10,8 +10,7 @@ using StockService.Web.Models;
 namespace StockService.Web.Controllers
 {
     public class HomeController : Controller
-    {
-        [Authorize]
+    {        
         public IActionResult Index()
         {
             return View();
