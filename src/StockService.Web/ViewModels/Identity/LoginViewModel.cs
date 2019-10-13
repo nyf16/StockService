@@ -11,7 +11,7 @@ namespace StockService.Web.ViewModels.Identity
         [Required]
         [EmailAddress]
         [Display(Name = "Kullanıcı Adı")]
-        public string UserName { get; set; }
+        public string Username { get; set; }
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Parola")]

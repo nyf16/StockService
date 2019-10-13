@@ -12,15 +12,16 @@ namespace StockService.Web.Controllers
     public class AccountController : Controller
     {
         // Kullanici kaydetmek icin veya kullanici bilgilerinde degisiklik yapmak icin kullanilan servis.
-        private readonly UserManager<ApplicationUser> _usermanager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
         // Kullanicinin uygulamaya giris cikis islemlerini yönettigimiz servis.
         private readonly SignInManager<ApplicationUser> _signInManager;
 
+
         public AccountController(UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager)
         {
-            _usermanager = userManager;
+            _userManager = userManager;
             _signInManager = signInManager;
         }
 
@@ -35,24 +36,24 @@ namespace StockService.Web.Controllers
             if (ModelState.IsValid)
             {
                 // model dogruysa
-                // kullaniciyi kontrol et var mi?
-                var existUser = await _usermanager.FindByEmailAsync(model.UserName);
-                // yoksa hata dön
+                // kullaciyi kontrol et var mi ?
+                var existUser = await _userManager.FindByEmailAsync(model.Username);
+                // yoksa hata don
                 if (existUser == null)
                 {
                     ModelState.AddModelError(string.Empty, "Bu e-mail ile kayıtlı bir kullanıcı bulunamadı!");
                     return View(model);
                 }
-                // kullanıcı adı ve sifre eslesiyor mu?
-                var login = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, false);
-                // eslesmiyorsa hat don
-                if(!login.Succeeded)
+                // kullanici adi ve sifre eslesiyor mu ?
+                var login = await _signInManager.PasswordSignInAsync(model.Username, model.Password, model.RememberMe, false);
+                // eslesmiyorsa hata don
+                if (!login.Succeeded)
                 {
-                    ModelState.AddModelError(string.Empty, " Bu e-mail ve şifre ile uyumlu bir kullanıcı bulunamadı! Şifrenizi kontrol edin!");
+                    ModelState.AddModelError(string.Empty, "Bu e-mail ve şifre ile uyumlu bir kullanıcı bulunamadı! Şifrenizi kontrol edin!");
                     return View(model);
                 }
 
-                // ana sayfaya yonlendır(simdilik)
+                //ana sayfaya yönlendir simdilik
                 return RedirectToAction("Index", "Home");
             }
             // basarili degilse hata don
@@ -76,14 +77,14 @@ namespace StockService.Web.Controllers
                 {
                     UserName = model.Email,
                     Email = model.Email,
-                    // FirstName = model.FirstName,
-                    // LastName = model.LastName,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
                     EmailConfirmed = true,
                     TwoFactorEnabled = false,
                     RegisterNumber = model.RegisterNumber
                 };
 
-                var registerUser = await _usermanager.CreateAsync(newUser, model.Password);
+                var registerUser = await _userManager.CreateAsync(newUser, model.Password);
                 if (registerUser.Succeeded)
                 {
                     await _signInManager.SignInAsync(newUser, isPersistent: false);
@@ -91,8 +92,8 @@ namespace StockService.Web.Controllers
                 }
                 // kaydetme basarisizsa hatalari modelstate ekle
                 AddErrors(registerUser);
-                
-            
+
+
             }
             // degilse hatalari don
             return View(model);
