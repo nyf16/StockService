@@ -70,7 +70,7 @@ namespace StockService.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            return View();
+           
             // gelen modeli valide et
             if (ModelState.IsValid)
             {
