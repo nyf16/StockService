@@ -33,8 +33,16 @@ namespace StockService.Web
             services.AddDbContext<ApplicationUserDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("StockServiceDb")));
 
             // Kullanici arayuzu hazir bir arayuz
-            services.AddDefaultIdentity<ApplicationUser>()
+            // services.AddDefaultIdentity<ApplicationUser>()
+            //    .AddEntityFrameworkStores<ApplicationUserDbContext>();
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationUserDbContext>();
+
+            services
+                .ConfigureApplicationCookie(options =>
+                options.LoginPath = "/Account/Login");
+
 
             // Kullanici olusuturulurken kullanilcak kurallar
 

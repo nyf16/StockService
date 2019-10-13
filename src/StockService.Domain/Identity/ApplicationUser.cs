@@ -7,7 +7,7 @@ namespace StockService.Domain.Identity
 {
     public class ApplicationUser : IdentityUser
     {
-        public int? RegisterNumber { get; set; }
+        public int RegisterNumber { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
     }
