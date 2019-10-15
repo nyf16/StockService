@@ -85,6 +85,7 @@ namespace StockService.Web.Controllers
                     LastName = model.LastName,
                     EmailConfirmed = true,
                     TwoFactorEnabled = false,
+                    Department = model.Department,
                     RegisterNumber = model.RegisterNumber
                 };
 

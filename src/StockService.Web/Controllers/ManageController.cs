@@ -43,6 +43,7 @@ namespace StockService.Web.Controllers
                     FirstName = x.FirstName,
                     LastName = x.LastName,
                     FullName = x.FirstName + " " + x.LastName,
+                    Department = x.Department,
                     RegisterNumber = x.RegisterNumber
                 })
                 .ToList();

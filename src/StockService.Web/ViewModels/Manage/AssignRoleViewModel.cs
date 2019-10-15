@@ -10,7 +10,7 @@ namespace StockService.Web.ViewModels.Manage
     public class AssignRoleViewModel
     {
         public string UserId { get; set; }
-        [DisplayName("Eklemek istediğiniz rolü seçin")]
+        [DisplayName("Eklemek istediğiniz yetkiyi seçin")]
         public string RoleId { get; set; }
         public List<SelectListItem> RoleList { get; set; }
     }

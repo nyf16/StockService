@@ -17,6 +17,8 @@ namespace StockService.Web.ViewModels.Manage
         public string LastName { get; set; }
         [DisplayName("Ad Soyad")]
         public string FullName { get; set; }
+        [DisplayName("Departman")]
+        public string Department { get; set; }
         [DisplayName("Sicil Numarası")]
         public int RegisterNumber { get; set; }
 
