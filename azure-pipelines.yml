@@ -39,6 +39,5 @@ steps:
     appType: 'webApp'
     WebAppName: 'stockservices'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-  
-  
-  - task: PublishBuildArtifacts@1
+
+- task: PublishBuildArtifacts@1
