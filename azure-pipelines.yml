@@ -33,3 +33,10 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 - task: PublishBuildArtifacts@1
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Free Trial (5abcc7fe-5fa9-4d1c-85e6-02d28b11e08e)'
+    appType: 'webApp'
+    WebAppName: 'stockservices'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
