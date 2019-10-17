@@ -40,4 +40,3 @@ steps:
     WebAppName: 'stockservices'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 
-- task: PublishBuildArtifacts@1
