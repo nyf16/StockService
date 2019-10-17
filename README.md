@@ -1,3 +1,3 @@
-[![Build Status](https://dev.azure.com/StockService/StockService/_apis/build/status/nyf16.StockService?branchName=master)](https://dev.azure.com/StockService/StockService/_build/latest?definitionId=1&branchName=master)
+[![Build Status](https://dev.azure.com/StockService/Stockservice/_apis/build/status/Stockservice-ASP.NET-CI?branchName=master)](https://dev.azure.com/StockService/Stockservice/_build/latest?definitionId=2&branchName=master)
 # StockService
 Product stock display and stock lacing
