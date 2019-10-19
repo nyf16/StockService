@@ -94,6 +94,9 @@ namespace StockService.Web.Controllers
             // rolesList component bunun view'inda yer alabilir
             return View();
         }
+
+        [HttpPost]
+        [Route("Roles/Create")]
         public async Task<IActionResult> CreateRole(RoleViewModel model)
         {
             // model valid mi

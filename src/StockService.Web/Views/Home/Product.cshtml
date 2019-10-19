@@ -1,0 +1,117 @@
+﻿@model IEnumerable<StockService.Domain.Product.Product>
+
+@{
+    ViewData["Title"] = "Product";
+}
+
+<h1>Product</h1>
+
+<p>
+    <a asp-action="CreateProduct">Create New</a>
+</p>
+
+<div class="table-responsive">
+    <table class="table table-bordered text-nowrap">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UrunAdi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UrunKodu)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Kompozisyon)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Renk)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Kalite)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Miktar)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RezerveDurum)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Musteri)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ModifiedDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedBy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedById)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ModifiedBy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ModifiedById)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UrunAdi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UrunKodu)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Kompozisyon)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Renk)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Kalite)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Miktar)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RezerveDurum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Musteri)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModifiedDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedById)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModifiedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModifiedById)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
