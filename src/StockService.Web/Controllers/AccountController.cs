@@ -120,5 +120,10 @@ namespace StockService.Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public IActionResult AccessDenied(string returnUrl)
+        {
+            return View();
+        }
+
     }
 }

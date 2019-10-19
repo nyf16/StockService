@@ -12,7 +12,7 @@ using StockService.Web.ViewModels.Manage;
 
 namespace StockService.Web.Controllers
 {
-    // [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     [Route("Manage")]
     public class ManageController : Controller
     {

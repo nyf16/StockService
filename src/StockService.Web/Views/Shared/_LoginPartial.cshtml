@@ -7,7 +7,7 @@
     @if (SignInManager.IsSignedIn(User))
     {
         @*Kullanici giris yapmissa ekrana kullanici bilgilerini ve cikis yap butonunu ekle *@
-        <form asp-area="" asp-controller="Account" asp-action="Logout" id="logoutForm" class="nabar-right">
+        <form asp-area="Account" asp-controller="Account" asp-action="Logout" id="logoutForm" class="dropdown-item">
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <span>Merhaba @User.Identity.Name</span>
