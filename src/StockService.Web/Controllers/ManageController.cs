@@ -131,7 +131,24 @@ namespace StockService.Web.Controllers
         [Route("Roles/Assign/{userId}")]
         public async Task<IActionResult> AssignRole(AssignRoleViewModel model)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.FindByIdAsync(model.UserId);
+                var role = await _roleManager.FindByIdAsync(model.RoleId);
+                var assignRole = await _userManager.AddToRoleAsync(user, role.Name);
+                if (assignRole.Succeeded)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Kayıt esnasında bir hata oluştu!");
+                    var roleAssignationErrors = assignRole.Errors.Select(x => x.Description);
+                    ModelState.AddModelError(string.Empty,
+                        string.Join(", ", roleAssignationErrors));
+                }
+            }
+            return View(model);
         }
         [Route("Roles/Revoke/{userId}/{roleId}")]
         public IActionResult RevekoRole(string userId, string roleId)
