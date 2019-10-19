@@ -30,7 +30,7 @@ namespace StockService.Web
         {
             // veritabanı adresini ef ' e gönderme ve onu servislere ekleme.
 
-            services.AddDbContext<ApplicationUserDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("StockServiceDb")));
+            services.AddDbContext<ApplicationUserDbContext>(options => options.UseMySql(Configuration.GetConnectionString("StockServiceDb")));
 
             // Kullanici arayuzu hazir bir arayuz
             // services.AddDefaultIdentity<ApplicationUser>()

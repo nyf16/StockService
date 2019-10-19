@@ -177,10 +177,49 @@ namespace StockService.Web.Controllers
             }
             return View(model);
         }
-        [Route("Roles/Revoke/{userId}/{roleId}")]
-        public IActionResult RevekoRole(string userId, string roleId)
+        [Route("Roles/Revoke/{userId}")]
+        public async Task<IActionResult> RevokeRole(string userId)
         {
-            return View();
+            AssignRoleViewModel model = new AssignRoleViewModel();
+            model.UserId = userId;
+
+            var user = await _userManager.FindByIdAsync(userId);
+            var userRolesStrList = await _userManager.GetRolesAsync(user);
+            if (userRolesStrList.Any())
+            {
+                var userRoles = _roleManager.Roles.Where(x => userRolesStrList.Contains(x.Name)).ToList();
+                model.RoleList = userRoles.Select(x => new SelectListItem
+                {
+                    Selected = false,
+                    Text = x.Name,
+                    Value = x.Id
+                    
+                }).ToList();
+            }
+            else
+            {
+                model.RoleList = new List<SelectListItem>();
+            }
+
+            return View(model);
+
+        }
+        [HttpPost]
+        [Route("Roles/Revoke/{userId}")]
+        public async Task<IActionResult> RevokeRole(AssignRoleViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.FindByIdAsync(model.UserId);
+                var role = await _roleManager.FindByIdAsync(model.RoleId);
+                var result = await _userManager.RemoveFromRoleAsync(user, role.Name);
+                if(result.Succeeded)
+                {
+                    return RedirectToAction("UserDetail", new { userId = model.UserId });
+                }
+                ModelState.AddModelError(string.Empty, "Bir hata oluştu, lütfen tekrar deneyiniz");
+            }
+            return View(model);
         }
 
 

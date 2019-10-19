@@ -12,6 +12,7 @@ using StockService.Web.Models;
 
 namespace StockService.Web.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ApplicationUserDbContext _context;
@@ -20,7 +21,7 @@ namespace StockService.Web.Controllers
             _context = context;
         }
 
-
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View();
@@ -65,12 +66,13 @@ namespace StockService.Web.Controllers
             return View(model);
         }
 
-        [Authorize]
+        
         public IActionResult Privacy()
         {
             return View();
         }
 
+        [AllowAnonymous]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

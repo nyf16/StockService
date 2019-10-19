@@ -47,7 +47,8 @@
                     @Html.DisplayFor(modelItem => item.RegisterNumber)
                 </td>
                 <td>
-                    <a asp-controller="Manage" asp-action="AssignRole" class="btn-sm btn-outline-primary" asp-route-userId="@item.Id">Yetki ata</a>
+                    <a asp-controller="Manage" asp-action="AssignRole" class="btn-sm btn-outline-primary" asp-route-userId="@item.Id">Yetki Ata</a>
+                    <a asp-controller="Manage" asp-action="RevokeRole" class="btn-sm btn-outline-primary" asp-route-userId="@item.Id">Yetkiyi Sil</a>
                     <a asp-controller="Manage" asp-action="UserDetail" class="btn-sm btn-outline-primary" asp-route-userId="@item.Id">Detay</a>
 
 
