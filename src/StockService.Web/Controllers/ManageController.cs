@@ -50,6 +50,30 @@ namespace StockService.Web.Controllers
             // tum kullanicilar listelensin
             return View(users);
         }
+        [Route("Users/Detail/{userId}")]
+        public async Task<IActionResult> UserDetail(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            var model = new UserViewModel
+            {
+                Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Id = user.Id,
+                FullName = user.FirstName + " " + user.LastName,
+                Department = user.Department,
+                RegisterNumber = user.RegisterNumber
+            };
+            ViewBag.UserRoles = "Yetkiye sahip değil";
+            var userRoles = await _userManager.GetRolesAsync(user);
+            if (userRoles.Any())
+            {
+                ViewBag.UserRoles = string.Join(", ", userRoles);
+            }
+            return View(model);
+        }
+
+
         [Route("Roles")]               
         public IActionResult Roles()
         {
