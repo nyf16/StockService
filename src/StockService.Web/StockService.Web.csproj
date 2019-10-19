@@ -17,31 +17,38 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\css\all.min.css" />
-    <Content Remove="wwwroot\css\dataTables.bootstrap4.css" />
-    <Content Remove="wwwroot\css\dataTables.bootstrap4.min.css" />
-    <Content Remove="wwwroot\css\sb-admin.css" />
-    <Content Remove="wwwroot\css\sb-admin.min.css" />
-    <Content Remove="wwwroot\js\bootstrap.bundle.min.js" />
-    <Content Remove="wwwroot\js\bootstrap.bundle.min.js.map" />
-    <Content Remove="wwwroot\js\jquery.easing.min.js" />
-    <Content Remove="wwwroot\js\jquery.min.js" />
-    <Content Remove="wwwroot\js\jquery.min.map" />
-    <Content Remove="wwwroot\js\sb-admin.min.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\css\all.min.css" />
-    <None Include="wwwroot\css\dataTables.bootstrap4.css" />
-    <None Include="wwwroot\css\dataTables.bootstrap4.min.css" />
-    <None Include="wwwroot\css\sb-admin.css" />
-    <None Include="wwwroot\css\sb-admin.min.css" />
     <None Include="wwwroot\js\bootstrap.bundle.min.js" />
     <None Include="wwwroot\js\bootstrap.bundle.min.js.map" />
     <None Include="wwwroot\js\jquery.easing.min.js" />
     <None Include="wwwroot\js\jquery.min.js" />
     <None Include="wwwroot\js\jquery.min.map" />
     <None Include="wwwroot\js\sb-admin.min.js" />
+    <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\LICENSE" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\LICENSE.md" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
     <None Include="wwwroot\webfonts\fa-brands-400.svg" />
     <None Include="wwwroot\webfonts\fa-brands-400.woff2" />
     <None Include="wwwroot\webfonts\fa-regular-400.svg" />
