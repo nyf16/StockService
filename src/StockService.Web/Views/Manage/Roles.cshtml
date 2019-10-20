@@ -32,11 +32,14 @@
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    @Html.ActionLink("Düzenle", "EditRole", new { id = item.Id}) |
+                    @Html.ActionLink("Detay", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Sil", "Delete", new { /* id=item.PrimaryKey */ })
                 </td>
             </tr>
         }
     </tbody>
 </table>
+<p>
+    <a asp-action="Index">Kullanıcı listesine geri dön</a>
+</p>
