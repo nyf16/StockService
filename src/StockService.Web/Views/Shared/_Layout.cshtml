@@ -100,7 +100,9 @@
                     <h6 class="dropdown-header">Login Screens:</h6>
                     <a class="dropdown-item" asp-controller="Account" asp-action="Login">Login</a>
                     <a class="dropdown-item" asp-controller="Account" asp-action="Register">Register</a>
-                    <a class="dropdown-item" asp-controller="Account" asp-action="Logout">Logout</a>
+                    <form asp-controller="Account" asp-action="Logout" method="post">
+                        <input type="submit" class="dropdown-item" value="Logout" />
+                    </form>
                     <div class="dropdown-divider"></div>
                     <h6 class="dropdown-header">Other Pages:</h6>
                     @if (User.IsInRole("Admin"))

@@ -48,13 +48,7 @@
                     @Html.DisplayNameFor(model => model.CreatedBy)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.CreatedById)
-                </th>
-                <th>
                     @Html.DisplayNameFor(model => model.ModifiedBy)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ModifiedById)
                 </th>
                 <th></th>
             </tr>
@@ -97,18 +91,16 @@
                         @Html.DisplayFor(modelItem => item.CreatedBy)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.CreatedById)
-                    </td>
-                    <td>
                         @Html.DisplayFor(modelItem => item.ModifiedBy)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.ModifiedById)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                         @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+
+                        <a class="btn btn-primary btn-sm" asp-action="EditProduct" asp-route-id="@item.Id">Düzenle</a>
+                        <a class="btn btn-info btn-sm" asp-action="DetailsProduct" asp-route-id="@item.Id">Detay</a>
+                        <a class="btn btn-danger btn-sm" asp-action="DeleteProduct" asp-route-id="@item.Id">Sil</a>
                     </td>
                 </tr>
             }
