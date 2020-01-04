@@ -130,7 +130,7 @@ namespace StockService.Web.Controllers
             return View();
         }
         [Route("Roles/Edit/{id}")]
-        public IActionResult DeletRole(string id)
+        public IActionResult DeleteRole(string id)
         {
             return View();
         }
