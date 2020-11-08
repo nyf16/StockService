@@ -14,7 +14,7 @@ namespace StockService.EF
         public ApplicationUserDbContext CreateDbContext(string[] args)
         {
             var dbContext = new ApplicationUserDbContext(
-                new DbContextOptionsBuilder<ApplicationUserDbContext>().UseMySql(
+                new DbContextOptionsBuilder<ApplicationUserDbContext>().UseSqlServer(
                     new ConfigurationBuilder().AddJsonFile(Path.Combine(Directory.GetCurrentDirectory(),
                     "appsettings.json"))
                     .Build()
